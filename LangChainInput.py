@@ -27,7 +27,7 @@ class ChatInputValidation(BaseModel):
     achievements: List[str] = Field(..., description="List of formatted achievements.")
 
 
-model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.5, api_key=api_key)
+model = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.5, api_key=api_key)
 Structured_model = model.with_structured_output(ChatInputValidation)
 
 def generate_resume_data(name, summary, skills, projects, exp, edu, other, awards, job_desc):
